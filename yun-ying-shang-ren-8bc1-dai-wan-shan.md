@@ -73,9 +73,9 @@ http/post
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| task\_id | String |  |
-| guide\_code | String |  |
-| guide\_message | String |  |
+| task\_id | String | 魔蝎运营商返回数据 |
+| guide\_code | String | 释义见@guide\_code demo |
+| guide\_message | String | 释义见@guide\_code demo |
 | auth\_code | String | 需要图片验证码是会出现该字段，该字段是base64编码的图片 |
 
 @response json
@@ -103,5 +103,5 @@ http/post
 | 104 | 流程进行中，根据guide\_code中的值判断下一步做什么 |
 | 105 | 提交成功，后台认证中，认证结果会通过回调通知APP |
 
-
+@guide\_code demo （当code=104时，处理）
 
