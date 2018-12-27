@@ -46,7 +46,7 @@ http/post
 ```js
 {    
     'userId':'xxxx',
-    'submitTime'::'xxxxxxxxxxxx',
+    'submitTime':xxxxxxxxxxxx,
     'contacts':[{
         'contactRelation':'xxxxxxxxxxxx',
         'mobile':'xxxxxxxxxxxx',

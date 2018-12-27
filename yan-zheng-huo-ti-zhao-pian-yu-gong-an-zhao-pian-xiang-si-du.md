@@ -44,7 +44,7 @@ PS：此处图片有可能不都是正面，请自行旋转
   'image_url':'xxx',
   'name':'xxx',
   'idnumber':'xxxxx',
-  'submitTime':'xxxxxxxxxxxx'
+  'submitTime':xxxxxxxxxxxx
 }
 ```
 

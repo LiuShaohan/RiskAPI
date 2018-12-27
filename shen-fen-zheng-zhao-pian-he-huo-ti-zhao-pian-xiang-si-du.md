@@ -42,7 +42,7 @@ PS：此处图片有可能不都是正面，请自行旋转
   'userId':'xxx',
   'first_image_url':'xxx',
   'second_image_url':'xxx',
-  'submitTime':'xxxxxxxxxxxx'
+  'submitTime':xxxxxxxxxxxx
 }
 ```
 
