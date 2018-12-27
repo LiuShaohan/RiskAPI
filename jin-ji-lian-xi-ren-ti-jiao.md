@@ -29,30 +29,37 @@ http/post
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
 | userId | Y | String | 用户唯一标示 |
+| contactData | Y | String | 联系人JSON数据集合见下方@@contactData param |
+| submitTime | Y | long | 本次提交的时间戳 |
+
+@@contactData param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
 | contactRelation | Y | String | 联系人关系 |
 | mobile | Y | String | 手机号 |
 | inputName | Y | String | 手动输入的联系人姓名 |
 | contactName | N | String | 通讯录中的联系人姓名 |
-| submitTime | Y | long | 本次提交的时间戳 |
 
 @request json
 
 ```js
-[{
-    'userId':'xxxxxxxxxx',
-    'contactRelation':'xxxxxxxxxxxx',
-    'mobile':'xxxxxxxxxxxx',
-    'inputName':'xxxxxxxxxxxx',  
-    'contactName'::'xxxxxxxxxxxx', 
-    'submitTime'::'xxxxxxxxxxxx'
-},{
-    'userId':'xxxxxxxxxx',
-    'contactRelation':'xxxxxxxxxxxx',
-    'mobile':'xxxxxxxxxxxx',
-    'inputName':'xxxxxxxxxxxx',  
-    'contactName'::'xxxxxxxxxxxx', 
-    'submitTime'::'xxxxxxxxxxxx'
-}]
+{    
+    'userId':'xxxx',
+    'submitTime'::'xxxxxxxxxxxx',
+    'data':[{
+        'contactRelation':'xxxxxxxxxxxx',
+        'mobile':'xxxxxxxxxxxx',
+        'inputName':'xxxxxxxxxxxx',  
+        'contactName'::'xxxxxxxxxxxx'
+    },{
+        'userId':'xxxxxxxxxx',
+        'contactRelation':'xxxxxxxxxxxx',
+        'mobile':'xxxxxxxxxxxx',
+        'inputName':'xxxxxxxxxxxx',  
+        'contactName'::'xxxxxxxxxxxx',
+    }]
+}
 ```
 
 @response param

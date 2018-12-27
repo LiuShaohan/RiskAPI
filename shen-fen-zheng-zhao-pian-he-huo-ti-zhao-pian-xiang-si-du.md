@@ -31,6 +31,7 @@ http/post
 | userId | Y | String | 用户唯一标示 |
 | first\_image\_url | Y | String | 第一张图片地址（比如身份证或活体） |
 | second\_image\_url | Y | String | 第二张图片地址（比如身份证或活体） |
+| submitTime | Y | long | 提交时的时间戳 |
 
 PS：此处图片有可能不都是正面，请自行旋转
 
@@ -40,7 +41,8 @@ PS：此处图片有可能不都是正面，请自行旋转
 {
   'userId':'xxx',
   'first_image_url':'xxx',
-  'second_image_url':'xxx'
+  'second_image_url':'xxx',
+  'submitTime':'xxxxxxxxxxxx'
 }
 ```
 

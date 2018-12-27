@@ -32,6 +32,7 @@ http/post
 | image\_url | Y | String | 活体截图的路径 |
 | name | Y | String | 姓名 |
 | idnumber | Y | String | 身份证号码 |
+| submitTime | Y | long | 提交数据的时间戳 |
 
 PS：此处图片有可能不都是正面，请自行旋转
 
@@ -42,7 +43,8 @@ PS：此处图片有可能不都是正面，请自行旋转
   'userId':'xxx',
   'image_url':'xxx',
   'name':'xxx',
-  'idnumber':'xxxxx'
+  'idnumber':'xxxxx',
+  'submitTime':'xxxxxxxxxxxx'
 }
 ```
 
