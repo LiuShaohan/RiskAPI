@@ -1,0 +1,68 @@
+# 订单提交
+
+@method
+
+```
+提交订单数据到风控
+```
+
+@introduction
+
+```
+根据用户唯一标示和orderId，获取数据进行风控自动审核，根据orderId回调风控结果
+```
+
+@URL
+
+```
+
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| userId | Y | String | 用户唯一标示 |
+| orderId | Y | String | 借款订单ID |
+| client\_ip | Y | String | 客户端ip地址 |
+| gisLongitude | N | String | 经度 |
+| gisLatitude | N | String | 纬度 |
+| callback\_url | true | String | 回调url |
+
+@request json
+
+```js
+{
+    'userId':'xxxxxxxxxx',
+    'orderId':'xxxxxxxxxxxx',
+    'client_ip':'xxxxxxxxxxxx',
+    'gisLongitude':'xxxxxxxxxxxx',  
+    'gisLatitude'::'xxxxxxxxxxxx', 
+    'callback_url'::'xxxxxxxxxxxx'
+}
+```
+
+@response param
+
+| 返回字段 | 字段类型 | 说明 |
+| :--- | :--- | :--- |
+| code | String | 系统响应码：1000正常，1001异常 |
+| message | string | 异常信息 |
+
+@response json
+
+```js
+{
+    'code':'1000',
+    'message':'xxxxxxx'
+}
+```
+
+
+

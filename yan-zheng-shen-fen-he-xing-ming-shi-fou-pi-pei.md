@@ -1,0 +1,76 @@
+# 验证身份和姓名是否匹配
+
+@method
+
+```
+验证身份证和姓名匹配
+```
+
+@introduction
+
+```
+身份证二要素合法性验证
+```
+
+@URL
+
+```
+/
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| name | Y | String | 姓名 |
+| idnumber | Y | String | 身份证号码 |
+
+@request json
+
+```js
+{
+  'name': 'xxx',
+  'idnumber': 'xxx'
+}
+```
+
+@response param
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| code | int | 系统响应码：1000，其他你们定义，可参看如下code demo |
+| validity | boolean | 判断结果。表示身份证号码与姓名是否匹配 |
+| message | String | 错误信息 |
+
+@response json
+
+```js
+{
+  'code': xxx,
+  'validity':false
+  'message': xxx
+}
+```
+
+@code demo
+
+| code | 字段值 | 描述 |
+| :--- | :--- | :--- |
+| 1100 | invalid crendential | 账号密码不匹配或签名认证生成有误 |
+| 1200 | invalid argument | 输入参数无效 |
+| 1101 | expired crendential | 账号过期 |
+| 1103 | url no permission | 该接口没有权限 |
+| 1002 | rate limit exceeded | 使用频率超过限制 |
+| 3000 | external service unavailable | 外部服务不可用 |
+| 3001 | external service timeout | 外部服务超时 |
+| 3002 | external service error | 外部服务出错 |
+| 3004 | invalid id number | 身份证号无效 |
+
+
+

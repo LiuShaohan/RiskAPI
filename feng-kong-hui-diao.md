@@ -1,0 +1,90 @@
+# 风控回调
+
+@method
+
+```
+提交订单数据后，风控回调配置的地址到指定服务，传输风控审核结果
+```
+
+@introduction
+
+```
+
+```
+
+@URL
+
+```
+由订单提交配置的回调地址决定
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| error\_code | Y | int | 错误码 |
+| error\_msg | Y | String | 错误描述 |
+| risk\_time | Y | String | 风控时间 |
+| orderId | Y | String | 订单Id |
+| callback\_data | Y | String | JSON @@callback\_data  param |
+
+@@callback\_data  param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| status | Y | String | 订单状态 |
+| check\_result | Y | int | 0.拒绝；1.自动通过；2.订单是否需要人工且电核确认;3.订单需要人工审核 |
+| check\_item | Y | String | 命中项JSON数据集合\[{key},{value}\]，详见下文@@@check\_item param |
+
+@@@check\_item param
+
+| 参数 | 值 |
+| :--- | :--- |
+| 命中的风控项 | 用户的值 |
+| 命中的风控项 | 命中的风控项 |
+
+@request json
+
+```js
+{
+    'error_code':xxxx,
+    'error_msg':'xxxxxxxxxxxx',
+    'risk_time':'xxxxxxxxxxxx',
+    'orderId':'xxxxxxxxxxxx',  
+    'callback_data':
+        {
+            'status':'xxxxxxxxxxxxxx',
+            'check_result':1,
+            'check_item':[
+            {'3个月联系人通话次数小于20次':'10'},
+            {'命中黑名单':'命中黑名单'},
+            {'key':'value'}
+            ]
+        }
+}
+```
+
+@response param
+
+| 返回字段 | 字段类型 | 说明 |
+| :--- | :--- | :--- |
+| code | String | 系统响应码：1000正常，1001异常 |
+| msg | boolean | true：解析完成；false：解析错误 |
+
+@response json
+
+```js
+{
+    'code':'1000',
+    'msg':'xxxxxxx'
+}
+```
+
+
+

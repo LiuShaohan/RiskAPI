@@ -1,0 +1,62 @@
+# 黑名单验证
+
+@method
+
+```
+验证手机号或身份证是否为黑名单
+```
+
+@introduction
+
+```
+
+```
+
+@URL
+
+```
+/
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| type | Y | int | 1：身份证 2：手机号码 |
+| content | Y | string | 手机号码或者身份证，根据type区分 |
+
+@request json
+
+```
+{
+    'type':1,
+    'content':'xxxxxxxxxxxx'
+}
+```
+
+@response param
+
+| 返回字段 | 字段类型 | 说明 |
+| :--- | :--- | :--- |
+| code | int | 系统响应码：1000，其他你们定义 |
+| validity | boolean | 是否为黑名单，true：是；false：不是 |
+| message | String | 错误信息 |
+
+@response json
+
+```js
+{
+  'code': xxx,
+  'validity':true,
+  'message':'xxx',
+}
+```
+
+
+

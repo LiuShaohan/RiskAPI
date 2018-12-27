@@ -1,0 +1,89 @@
+# 验证活体照片与公安照片相似度
+
+@method
+
+```
+验证公安预留照片和活体照片相似度
+```
+
+@introduction
+
+```
+用姓名、身份证号获取公安照片，然后与活体照片进行比对，来判断是否为同一个人。
+```
+
+@URL
+
+```
+/
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 字段 | 必选 | 类型 | 描述 |
+| :--- | :--- | :--- | :--- |
+| userId | Y | String | 用户唯一标示 |
+| image\_url | Y | String | 活体截图的路径 |
+| name | Y | String | 姓名 |
+| idnumber | Y | String | 身份证号码 |
+
+PS：此处图片有可能不都是正面，请自行旋转
+
+@request json
+
+```js
+{
+  'userId':'xxx',
+  'image_url':'xxx',
+  'name':'xxx',
+  'idnumber':'xxxxx'
+}
+```
+
+@response param
+
+| 字段 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| code | int | 系统响应码:1000，  其他你们定义，可参看如下code demo |
+| verification\_score | float | 人脸比对得分，值为 0~1，值越大表示是同一个人的可能性越大 |
+| message | String | 错误信息 |
+
+@response json
+
+```js
+{
+  'code': xxx,
+  'verification_score': xxx
+  'message':xxx
+}
+```
+
+@code demo
+
+| code | 字段值 | 描述 |
+| :--- | :--- | :--- |
+| 1100 | invalid crendential | 账号密码不匹配或签名认证生成有误 |
+| 1200 | invalid argument | 输入参数无效 |
+| 1101 | expired crendential | 账号过期 |
+| 1103 | url no permission | 该接口没有权限 |
+| 1002 | rate limit exceeded | 调用频率超过限制 |
+| 2003 | invalid image size | 图片大小不符合要求 |
+| 2004 | invalid content length | 输入内容长度不符合要求 |
+| 2005 | invalid image type | 图片类型不符合要求 |
+| 2006 | corrupted image error | 图片损坏 |
+| 3000 | external service unavailable | 外部服务不可用 |
+| 3001 | external service timeout | 外部服务超时 |
+| 3002 | external service error | 外部服务出错 |
+| 3003 | name id mismatched | 姓名与身份证号不匹配 |
+| 3004 | invalid id number | 身份证号无效 |
+| 3005 | photo not exist | 第三方底图不存在 |
+| 4000 | detection failed | 提取特征失败,没有检测到图片中的人脸 |
+
+
+

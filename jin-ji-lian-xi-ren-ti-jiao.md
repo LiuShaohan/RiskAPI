@@ -1,0 +1,75 @@
+# 紧急联系人提交
+
+@method
+
+```
+提交紧急联系人到风控
+```
+
+@introduction
+
+```
+根据用户唯一标示进行更新风控数据
+```
+
+@URL
+
+```
+
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| userId | Y | String | 用户唯一标示 |
+| contactRelation | Y | String | 联系人关系 |
+| mobile | Y | String | 手机号 |
+| inputName | Y | String | 手动输入的联系人姓名 |
+| contactName | N | String | 通讯录中的联系人姓名 |
+| submitTime | Y | long | 本次提交的时间戳 |
+
+@request json
+
+```js
+[{
+    'userId':'xxxxxxxxxx',
+    'contactRelation':'xxxxxxxxxxxx',
+    'mobile':'xxxxxxxxxxxx',
+    'inputName':'xxxxxxxxxxxx',  
+    'contactName'::'xxxxxxxxxxxx', 
+    'submitTime'::'xxxxxxxxxxxx'
+},{
+    'userId':'xxxxxxxxxx',
+    'contactRelation':'xxxxxxxxxxxx',
+    'mobile':'xxxxxxxxxxxx',
+    'inputName':'xxxxxxxxxxxx',  
+    'contactName'::'xxxxxxxxxxxx', 
+    'submitTime'::'xxxxxxxxxxxx'
+}]
+```
+
+@response param
+
+| 返回字段 | 字段类型 | 说明 |
+| :--- | :--- | :--- |
+| code | String | 系统响应码：1000正常，1001异常 |
+| msg | string | 异常信息 |
+
+@response json
+
+```js
+{
+    'code':'1000',
+    'msg':'xxxxxxx'
+}
+```
+
+
+
