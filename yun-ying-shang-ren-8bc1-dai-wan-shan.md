@@ -1,5 +1,11 @@
 # 运营商认证-魔蝎数据
 
+首先，统一调用魔蝎运营商认证接口
+
+其次，后续流程根据code和guide\_code指示进行。
+
+最后，当APP收到code = 105的返回值时，表示提交成功，风控已经开始认证，认证结果会通过回调的方式告知APP。
+
 @method
 
 ```
@@ -9,10 +15,7 @@
 @introduction
 
 ```
-首先，统一调用魔蝎运营商认证接口
-其次，后续流程根据code和guide_code指示进行。
-最后，当APP收到code = 105的返回值时，表示提交成功，风控已经开始认证，认证结果会通过回调的方式告知APP。
-PS： 仅写了部分，主要参考魔蝎数据的接口即可，请勿随意改定接口参数。
+
 ```
 
 @URL
@@ -137,9 +140,143 @@ http/post
 | 90034 | 该地区升级中，请明天再试 |
 | 90035 | 运营商系统繁忙 |
 
-PS： 其余发送验证码与重发验证码2个接口参考魔蝎数据的接口即可，请勿随意改定接口参数。
+PS： 发送验证码与重发验证码2个接口参考魔蝎数据的接口即可，请勿随意改定接口参数。
 
 
+
+@method
+
+```
+运营商提交验证码
+```
+
+@introduction
+
+```
+/api/mx_operator/mx_input_sms
+```
+
+@URL
+
+```
+/api/mx_operator/mx_yys_auth
+```
+
+@request method
+
+```
+http/post
+```
+
+@request param
+
+| 参数 | 必选 | 类型 | 说明 |
+| :--- | :--- | :--- | :--- |
+| userId | Y | String | 用户唯一标示 |
+| mobile\_no | Y | String | 用户手机号 |
+| identity\_card | Y | String | 用户身份证号 |
+| name | Y | String | 用户姓名 |
+| password | Y | String | 运营商登录密码 |
+| callback\_set | Y | String | 回调地址的JSON数据集合，详情见下文 |
+| submitTime | Y | long | 提交时的时间戳 |
+
+@@callback\_set param
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| callback\_url | String | 异步回调URL |
+| token | String | token |
+
+@request json
+
+```js
+{
+    'token':'xxxxxxxxx',
+    'mobile_no':'xxxxxxxxxxxx',
+    'identity_card':'xxxxxxxxxxxxxxxxxxxxx',
+    'name':'xxx',
+    'password':'xxxxxx',
+    'submitTime':xxxxxxx,
+    'callback_set':{
+        'callback_url':'xxxxxxxxxxxxxx',
+        'token':'xxxxxxxxxxxxxx'
+    }
+}
+```
+
+@response param
+
+| 返回字段 | 字段类型 | 说明 |
+| :--- | :--- | :--- |
+| code | String | 流程进度代码，释义见@code demo |
+| message | String | code的解释 |
+| trace\_id | String | 将该值赋给下一接口的traceId |
+| date\_stamp | String | 时间戳 |
+| data | String | 返回的JSON数据集合，详情见下文@@data param |
+
+@@data param
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| task\_id | String | 魔蝎运营商返回数据 |
+| guide\_code | String | 释义见@guide\_code demo |
+| guide\_message | String | 释义见@guide\_code demo |
+| auth\_code | String | 需要图片验证码是会出现该字段，该字段是base64编码的图片 |
+
+@response json
+
+```js
+{
+    'code':'103',
+    'message':'xxxxxxx',
+    'trace_id':'xxxxxx',
+    'date_stamp':'xxxxxxxxx',
+    'data':{
+        'task_id':'xxxxxxxxx',
+        'guide_code':'xxxxxxxxx',
+        'guide_message':'xxxxxxxxx',
+        'auth_code':'xxxxxxxxx'
+    }
+}
+```
+
+@code demo
+
+| code | 说明 |
+| :--- | :--- |
+| 103 | 系统异常 |
+| 104 | 流程进行中，根据guide\_code中的值判断下一步做什么 |
+| 105 | 提交成功，后台认证中，认证结果会通过回调通知APP |
+
+@guide\_code demo （当code=104时，处理）
+
+| code | 说明 |
+| :--- | :--- |
+| 90001 | 请输入短信验证码 |
+| 90002 | 请输入图片验证码 |
+| 90006 | 服务密码错误，请重新输入 |
+| 90021 | 服务密码错误次数超过限制，账号使用受限，请明天再试 |
+| 90009 | 简单密码或者初始密码，请重置后重试 |
+| 90022 | 个人用户或证件类型禁用服务密码，请启用服务密码后重试 |
+| 90012 | 账号（手机号）错误，请检查后重试 |
+| 90023 | 密码尚未激活，请登录网上营业厅激活后重试 |
+| 90024 | 该卡尚未实名登记，请实名登记后重试 |
+| 90025 | 账号状态不正常 |
+| 90005 | 身份证号码为空或者不合法 |
+| 90004 | 用户名不正确 |
+| 90026 | 证件号或用户名不正确 |
+| 90027 | 您已经在其他地点或浏览器登陆过，请确认退出后重试 |
+| 90028 | 图片验证码错误 |
+| 90029 | 短信验证码发送过于频繁 |
+| 90007 | 短信验证码错误，请耐心等待下一条 |
+| 90010 | 验证码失效，请重新登录 |
+| 90030 | 验证码错误次数太多，请稍后再试 |
+| 90031 | 短信验证码发送失败 |
+| 90032 | 等待用户输入验证码超时 |
+| 90033 | 该地区暂不支持服务 |
+| 90020 | 运营商正在升级中，稍后再试 |
+| 90034 | 该地区升级中，请明天再试 |
+| 90035 | 运营商系统繁忙 |
 
 **异步回调返回数据**
 
