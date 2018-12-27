@@ -32,7 +32,6 @@ http/post
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
 | userId | Y | String | 用户唯一标示 |
-| token | Y | Sting | token |
 | mobile\_no | Y | String | 用户手机号 |
 | identity\_card | Y | String | 用户身份证号 |
 | name | Y | String | 用户姓名 |
