@@ -70,7 +70,7 @@ http/post
 | code | String | 流程进度代码，释义见@code demo |
 | message | String | code的解释 |
 | trace\_id | String | 将该值赋给下一接口的traceId |
-| data\_stamp | String | 时间戳 |
+| date\_stamp | String | 时间戳 |
 | data | String | 返回的JSON数据集合，详情见下文@@data param |
 
 @@data param
