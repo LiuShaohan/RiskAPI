@@ -53,7 +53,7 @@ http/post
 
 ```js
 {
-    'token':'xxxxxxxxx',
+    'userId':'xxxxxxxxx',
     'mobile_no':'xxxxxxxxxxxx',
     'identity_card':'xxxxxxxxxxxxxxxxxxxxx',
     'name':'xxx',
@@ -142,8 +142,6 @@ http/post
 
 PS： 发送验证码与重发验证码2个接口参考魔蝎数据的接口即可，请勿随意改定接口参数。
 
-
-
 @method
 
 ```
@@ -153,13 +151,13 @@ PS： 发送验证码与重发验证码2个接口参考魔蝎数据的接口即�
 @introduction
 
 ```
-/api/mx_operator/mx_input_sms
+
 ```
 
 @URL
 
 ```
-/api/mx_operator/mx_yys_auth
+/api/mx_operator/mx_input_sms
 ```
 
 @request method
@@ -173,7 +171,7 @@ http/post
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
 | userId | Y | String | 用户唯一标示 |
-| mobile\_no | Y | String | 用户手机号 |
+|  | Y | String | 用户手机号 |
 | identity\_card | Y | String | 用户身份证号 |
 | name | Y | String | 用户姓名 |
 | password | Y | String | 运营商登录密码 |
