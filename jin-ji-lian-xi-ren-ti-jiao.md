@@ -29,10 +29,10 @@ http/post
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
 | userId | Y | String | 用户唯一标示 |
-| contactData | Y | String | 联系人JSON数据集合见下方@@contactData param |
+| contactData | Y | String | 联系人JSON数据集合见下方@@contacts param |
 | submitTime | Y | long | 本次提交的时间戳 |
 
-@@contactData param
+@@contacts param
 
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
@@ -47,7 +47,7 @@ http/post
 {    
     'userId':'xxxx',
     'submitTime'::'xxxxxxxxxxxx',
-    'data':[{
+    'contacts':[{
         'contactRelation':'xxxxxxxxxxxx',
         'mobile':'xxxxxxxxxxxx',
         'inputName':'xxxxxxxxxxxx',  
