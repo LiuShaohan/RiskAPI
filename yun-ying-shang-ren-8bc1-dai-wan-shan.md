@@ -37,6 +37,7 @@ http/post
 | name | Y | String | 用户姓名 |
 | password | Y | String | 运营商登录密码 |
 | callback\_set | Y | String | 回调地址的JSON数据集合，详情见下文 |
+| submitTime | Y | long | 提交时的时间戳 |
 
 @@callback\_set param
 
@@ -54,6 +55,7 @@ http/post
     'identity_card':'xxxxxxxxxxxxxxxxxxxxx',
     'name':'xxx',
     'password':'xxxxxx',
+    'submitTime':xxxxxxx,
     'callback_set':{
         'callback_url':'xxxxxxxxxxxxxx',
         'token':'xxxxxxxxxxxxxx'
