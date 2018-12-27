@@ -1,3 +1,6 @@
+
+---
+
 # 通讯录和通话记录上传
 
 @method
@@ -29,8 +32,6 @@ http/post
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
 | userId | Y | String | 用户唯一标识 |
-| mobile | Y | String | 手机号码 |
-| id\_card | Y | String | 身份证号码 |
 | contacts | Y | String | 联系人的json字符串list，见下文@@contacts param |
 | records | N | String | 通话记录json字符串list，见下文@@records param |
 | submitTime | Y | long | 提交时的时间戳 |
