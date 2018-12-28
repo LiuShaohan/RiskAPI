@@ -59,7 +59,7 @@ http/post
     'callback_data':
         {
             'status':'xxxxxxxxxxxxxx',
-            'check_result':1,
+            'check_result':0,
             'check_item':[
             {'3个月联系人通话次数小于20次':'10'},
             {'命中黑名单':'命中黑名单'},
