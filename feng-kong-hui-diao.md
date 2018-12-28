@@ -38,7 +38,6 @@ http/post
 
 | 参数 | 必选 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- |
-| status | Y | String | 订单状态 |
 | check\_result | Y | int | 0.拒绝；1.自动通过；2.订单是否需要人工且电核确认;3.订单需要人工审核 |
 | check\_item | Y | String | 命中项JSON数据集合\[{key},{value}\]，详见下文@@@check\_item param |
 
