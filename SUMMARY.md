@@ -1,7 +1,6 @@
 # Summary
 
-[Read](README.md)
-
+* [readme](README.md)
 * [黑名单库拉取](chapter1.md)
 * [黑名单验证](hei-ming-dan-yan-zheng.md)
 * [验证身份和姓名是否匹配](yan-zheng-shen-fen-he-xing-ming-shi-fou-pi-pei.md)
@@ -14,8 +13,4 @@
 * [风控回调](feng-kong-hui-diao.md)
 * [风控结果查询](feng-kong-jie-guo-cha-xun.md)
 * [风控报告](feng-kong-bao-gao.md)
-
-
-
-
 
