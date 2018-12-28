@@ -33,7 +33,8 @@ http/post
 | client\_ip | Y | String | 客户端ip地址 |
 | gisLongitude | N | String | 经度 |
 | gisLatitude | N | String | 纬度 |
-| callback\_url | true | String | 回调url |
+| callback\_url | Y | String | 回调url |
+| submitTime | Y | long | 提交的时间 |
 
 @request json
 
