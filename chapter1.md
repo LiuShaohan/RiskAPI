@@ -46,7 +46,7 @@ http/post
 | pageCount | int | 总页数 |
 | content | List | eg.:字符串数组\["17759219164","17759219165"\] |
 
-@response josn
+@response json
 
 ```js
 {
