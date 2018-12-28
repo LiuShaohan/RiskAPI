@@ -12,4 +12,5 @@
 * [订单提交](ding-dan-ti-jiao.md)
 * [风控回调](feng-kong-hui-diao.md)
 * [风控结果查询](feng-kong-jie-guo-cha-xun.md)
+* [风控报告](feng-kong-bao-gao.md)
 
