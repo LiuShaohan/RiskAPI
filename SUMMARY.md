@@ -1,16 +1,18 @@
 # Summary
 
 * [readme](README.md)
-* [黑名单库拉取](黑名单库拉取.md)
-* [黑名单验证](hei-ming-dan-yan-zheng.md)
-* [验证身份和姓名是否匹配](yan-zheng-shen-fen-he-xing-ming-shi-fou-pi-pei.md)
-* [身份证照片和活体照片相似度](shen-fen-zheng-zhao-pian-he-huo-ti-zhao-pian-xiang-si-du.md)
-* [验证活体照片与公安照片相似度](yan-zheng-huo-ti-zhao-pian-yu-gong-an-zhao-pian-xiang-si-du.md)
-* [紧急联系人提交](jin-ji-lian-xi-ren-ti-jiao.md)
-* [通讯录和通话记录上传](tong-xun-lu-he-tong-hua-ji-lu-shang-chuan.md)
-* [运营商认证](yun-ying-shang-ren-8bc1-dai-wan-shan.md)
-* [订单提交](ding-dan-ti-jiao.md)
-* [风控回调](feng-kong-hui-diao.md)
-* [风控结果查询](feng-kong-jie-guo-cha-xun.md)
-* [风控报告](feng-kong-bao-gao.md)
+* [黑名单库拉取](/黑名单库拉取.md)
+* [黑名单验证](/黑名单验证.md)
+* [验证身份和姓名是否匹配](/验证身份证号和姓名是否匹配.md)
+* [身份证照片和活体照片相似度](/身份证照片和活体截图照片相似度.md)
+* [验证活体照片与公安照片相似度](/验证活体截图照片与公安照片相似度.md)
+* [紧急联系人提交](/紧急联系人提交.md)
+* [通讯录和通话记录上传](/通讯录和通话记录上传.md)
+* [运营商认证](/运营商认证-魔蝎数据.md)
+* [订单提交](/订单提交.md)
+* [风控回调](/风控回调.md)
+* [风控结果查询](/风控结果查询.md)
+* [风控报告](/风控报告.md)
+
+
 
