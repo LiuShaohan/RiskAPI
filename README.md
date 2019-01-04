@@ -19,7 +19,7 @@ submitTime：为业务系统向风控系统提交风控数据时的时间。
 
 # 目录
 
-* [Readme](README.md)
+* [Readme](/README.md)
 
 * [黑名单库拉取](/黑名单库拉取.md)
 
