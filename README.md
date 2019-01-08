@@ -13,7 +13,7 @@ submitTime：为业务系统向风控系统提交风控数据时的时间。
 
 ### BaseURL
 
-[http://172.10.1.201:9000/](http://172.10.1.201:9000/)
+[https://apifktest.yfbigdata.com/](https://apifktest.yfbigdata.com/)
 
 ### 版本更新说明
 
